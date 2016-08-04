@@ -33,9 +33,9 @@ RUN sed -i 's/^\([^#]\)/#\1/g' /etc/httpd/conf.d/welcome.conf
 
 RUN sed -i "s|;date.timezone =|date.timezone = Asia/Colombo|" /etc/php.ini
 
-RUN sed -i "1ialias ls='ls --color'" /root/.bashrc
-
 RUN useradd --shell /bin/bash -u 1000 -o -c "" -m user
+
+RUN sed -i "1ialias ls='ls --color'" /home/user/.bashrc
 
 COPY index.php /var/www/html/index.php
 
